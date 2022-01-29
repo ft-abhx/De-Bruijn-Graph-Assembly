@@ -1,6 +1,5 @@
-
-!pip install gvmagic
-
+#!pip install gvmagic 
+#Install the package before code execution
 import gvmagic
 
 def debruijnize(reads):
