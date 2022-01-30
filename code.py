@@ -1,5 +1,5 @@
-#!pip install gvmagic 
-#Install the package before code execution
+#!pip install gvmagic
+
 import gvmagic
 
 def debruijnize(reads):
@@ -87,6 +87,7 @@ def assemble_trail(trail):
     for node in trail:
         result += node[-1]
     return result
+    
 def test_assembly_debruijn(t,k):
     reads = build_k_mer(t,k)
     G = debruijnize(reads)
@@ -98,7 +99,8 @@ def test_assembly_debruijn(t,k):
     trail = eulerian_trail(nemap,start)
     return assemble_trail(trail)
 
-reads = build_k_mer("ATCGTTGCGCGACCG",4)
+input_sequence="ATCGTTGCGCGACCG"
+reads = build_k_mer(input_sequence,4)
 print(reads)
 
 G = debruijnize(reads)
@@ -108,7 +110,7 @@ m = make_node_edge_map(G[1])
 print(m)
 
 start = G[2][0] if (len(G[2]) > 0) else G[0][0]
-print (m)
+print (start)
 
 t = eulerian_trail(m,start)
 print(t)
@@ -117,4 +119,11 @@ get_ipython().magic(u'load_ext gvmagic')
 
 get_ipython().magic(u'dotstr visualize_debruijn(G)')
 
-assemble_trail(t)
+print("Input String: ",input_sequence)
+reconstructed_string=assemble_trail(t)
+print("Reconstructed String: ", reconstructed_string)
+
+if input_sequence == reconstructed_string:
+    print("String Reconstruction Successful")
+else:
+  print("String Reconstruction Unsuccessful")
