@@ -7,4 +7,4 @@ Sequence assembly can be done using one of three approaches:
 * overlap-layout-consensus (OLC) and Hamiltonian path
 * de Bruijn graph and Eulerian path.
 
-Here we use de Bruijn graph and Eulerian path for the string reconstruction
+Here we use de Bruijn graph and Eulerian path for the string reconstruction.
