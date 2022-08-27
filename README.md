@@ -1,6 +1,6 @@
 # De-Bruijn-Graph-Assembly
 
-Genome assembly refers to the process of putting nucleotide sequence into the correct order. Genome assembly refers to the process of putting nucleotide sequence into the correct
+Genome assembly refers to the process of putting nucleotide sequence into the correct
 order. 
 Sequence assembly can be done using one of three approaches:
 * greedy
